@@ -53,20 +53,20 @@ const MovingImg = ({ title, img, link }) => {
 const Article = ({ image, title, date, link }) => {
   return (
     <motion.li 
-      className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4"
+      className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:border-light/75 dark:bg-dark dark:text-light "
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
       viewport={{ once: true }}
     >
       <MovingImg title={title} img={image} link={link} />
-      <span className="text-primary font-semibold pl-4">{date}</span>
+      <span className="text-primary font-semibold pl-4 dark:text-primaryDark">{date}</span>
     </motion.li>
   )
 }
 
 const FeaturedArticle = ({ img, title, time, summary, link }) => {
   return (
-    <li className="relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl">
+    <li className="relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light/75">
       <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl" />
       <Link href={link} target="_blank"
         className="w-full inline-block cursor-pointer overflow-hidden rounded-lg"
@@ -80,7 +80,7 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
         <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline">{title}</h2>
       </Link>
       <p className="text-sm mb-2">{summary}</p>
-      <span className="text-primary font-semibold">{time}</span>
+      <span className="text-primary font-semibold dark:text-primaryDark">{time}</span>
     </li>
   )
 }
@@ -92,7 +92,7 @@ export default function Articles() {
         <title>Diego Almeida | Articles Page</title>
         <meta name="description" content="Diego Almeida articles page" />
       </Head>
-      <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden">
+      <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light">
         <Layout className="pt-16">
           <AnimatedText 
             text="Words Can Change The World!"
